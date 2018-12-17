@@ -1,0 +1,379 @@
+html { 
+    font-size: 16px;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #ced3d3;
+    margin: 0;
+  /*  font-size: 15px;*/
+}
+.container{
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.container__block {
+    clear: both;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+.header {
+    background-color: #b4dfe5;
+    display: block;
+    height: 115px;
+}
+.logo__img{
+    height: 55px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.header__logo, 
+.header__info{
+    padding: 15px;
+}
+main{
+    padding: 15px;
+}
+.container__menu{
+    height: 64px;
+    background: url("/images/header.jpg") repeat-x;
+}
+.container__block_bg_white{
+     background-color: #F4FCFF;
+     min-height: 400px;
+}
+.layout{
+    overflow: hidden;
+}
+.layout__col {
+    float: left;
+    min-width: 320px;
+}
+.layout__col_second{
+float: none;
+margin-left: 320px;
+}
+.login{
+    float: right;
+}
+.login_inputs{
+    float: left;
+}
+.login__labels a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+/*    font-size: 0.9em;*/
+}
+#login__labels_new{
+    clear: both;
+    float: right;
+}
+.login__labels{
+    float: left;
+}
+.btn {
+    border: solid 1px #A3A6AB;
+    background-color: #FBE6A3;
+    border-radius: 2px;
+    /*font-size: 1em;*/
+    padding: 3px 8px;
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+}
+.btn_main{
+
+}
+.login__popup_both,
+.login__popup_signin,
+.login__popup_signup{
+    display: none;
+}
+.login__popup {
+    display: block;
+    position: absolute;
+    top: 183px;
+    left: 555px;
+    z-index: 3;
+    background-color: #D2FEFF;
+    padding: 50px;
+    border-radius: 5px;
+}
+.login p{
+    float: left;
+    margin-left: 15px;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.6;
+    display: none;
+    overflow: hidden;
+}
+.info__title{
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+}
+.info__menu_tab{
+    margin: 0 15px 30px 0;
+    float: left;
+}
+.info__menu_tab a{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    /*font-size: 0.9em;*/
+    text-decoration: none;
+    color: #33476F;
+
+}
+
+.info__menu_tab_active a{
+    color: #EEA079;
+
+}
+
+.inputItem{
+    margin: 5px 0 15px 0;
+    clear: both;
+    font-size: 0.9rem;
+}
+.inputItem input{
+    margin: 6px 0;
+    font-size: 0.8rem;
+}
+
+.register{
+    color: #405357;
+    /*font-size: 15px;*/
+}
+.container__footer{
+    background-color: #313C72;
+    /*height: 120px;*/
+}
+h1{
+    color: #323872;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-align:center;
+    margin: 15px 0;
+}
+h2{
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin: 25px 0 15px 0; 
+    color: #323872;
+}
+h3{
+    font-weight: 500;
+    color: #323872;
+    font-size: 1rem;
+}
+ul.horizontal{
+    list-style: none;
+}
+ul.horizontal li{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.layout__block_center{
+
+}
+.layout__block_text{
+    margin: 0 auto;
+    color: #405357;
+    max-width: 1100px;
+    font-weight: 400;
+    position: relative;
+    font-size: 1rem;
+    text-align: justify;
+}
+.medium_img{
+    height: 160px;
+}
+.small_img{
+    height: 16px;
+}
+.horizontal__description{
+    text-align: justify;
+    padding: 15px 25px;
+}
+.footer__block{
+    padding: 0 55px;
+
+}
+.container__footer, .footer_strip
+{
+    display: inline-block;
+    min-width: 1400px;
+}
+.footer_strip{
+    background-color: #f4976c;
+    height: 20px;
+    margin-top: -4px;
+}
+.footer__info, .footer__info a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer__info .info__title{
+   
+}
+
+.footer__block .layout__col{
+    width: 75%;
+}
+
+.footer__block .layout__col_second{
+    width: 25%;
+    margin: 0;
+    float: left;
+}
+
+.services h1{
+    text-align: left;
+}
+.services h2{
+    clear: both;
+}
+
+.advertising h2,
+.clearblock h2{
+    display: inline-block;
+}
+.services{
+    margin-left: 35px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #fff;
+    color: #405357;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    box-shadow:  4px 4px 5px -4px rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.advertising{
+    display: inline-block;
+}
+
+.advertising .textblock img,
+.advertising .textblock div{
+    float: left;
+    line-height: 1.5rem;
+    margin-right: 20px;
+}
+.advertising .textblock div{
+    margin-right: 50px;
+}
+.underline{
+    text-decoration: underline;
+}
+.textcolumn{
+    float: left;
+    margin: 0 40px 20px 0;
+    line-height: 1.5rem;
+
+}
+.clearblock{
+    clear: both;
+}
+
+.socialNetworks div{
+    margin: 15px 15px 15px 0;
+    width: 52px;
+    height: 52px;
+    display: inline-block;
+}
+
+
+.fb {
+    background: url("/images/fb.png") no-repeat;
+}
+
+.fb:hover {
+    background: url("/images/fb1.png") no-repeat;
+}
+.youtube {
+    background: url("/images/youtube.png") no-repeat;
+}
+
+.youtube:hover {
+    background: url("/images/youtube1.png") no-repeat;
+}
+.telegram {
+    background: url("/images/telegram.png") no-repeat;
+}
+
+.telegram:hover {
+    background: url("/images/telegram1.png") no-repeat;
+}
+.searchbar .inputItem{
+    float: left;
+    clear: none;
+    margin-left: 40px;
+
+}
+.searchbar .inputItem input{
+    line-height: 1.5rem;
+    margin: 0;
+}
+.searchbar .inputItem:last-child{
+    margin-left: 10px;
+}
+select {
+      /*margin: 50px;
+      width: 150px;
+      padding: 5px 35px 5px 5px;
+      */
+
+/*$demo-gray: #D6D6D6;*/
+    padding: 5px;
+    color: #303c6c;
+    width:200px;
+    font-size: 0.9rem;
+    border: 1px solid #E6E6E6;
+    height: 1.8rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("/images/icons/arrows.png") 96% / 5% no-repeat #eee;
+}
+
+
+/* CAUTION: IE hackery ahead */
+select::-ms-expand { 
+    display: none; /* remove default arrow on ie10 and ie11 */
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    } 
+}

@@ -1,0 +1,355 @@
+<head>
+    <title>BazaIT</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet"> 
+</head>
+<body>
+    
+</body>
+<template name="main">
+        <div class="container">
+            <div class="container__header">
+                <header class="header">
+                    <div class="container__block">
+                        <div class="header__logo">
+                            <div class="logo">
+                                <a class="logo__link" href="{{pathFor route='home'}}">
+                                    <img class="logo__img" src="/images/logo.png" alt="BazaIT">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header__info">
+                            <div class="info">
+                                <div class="info__title">
+                                    
+
+                                    <div class="login">
+                                        {{> jobseekers}}
+                                        <div class="login__popup_both">
+                                            {{> loginMenu}}
+                                            <div class="login__popup_signin">
+                                                {{> login}}
+                                            </div>
+                                            <div class="login__popup_signup">
+                                                {{> register}}
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                <div class="info__menu">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </header>
+            </div>
+            <div class="container__menu">
+                <div class="searchbar">
+                    {{> allvacanciessearch}}
+                </div>
+            </div>
+            <div class="container__layout container__block container__block_bg_white">
+                <main class="layout">
+                    <div class="layout__col">
+                        <div class="layout__block">
+                            {{> yield}}
+                        </div>
+                    </div>
+                    <div class="layout__col layout__col_second">
+                     
+                    </div>
+
+                </main>
+               
+                <!-- <p>{{> loginButtons}}</p> -->
+
+
+
+               
+            
+            </div>
+            <div class="container__footer">
+                <footer class="footer">
+                    <div class="">
+                        <div class="">
+                            {{> footerMenu}}
+                            
+                        </div>
+                    </div>
+
+                </footer>
+            </div>
+            <div class="footer_strip"></div>
+        
+        </div>
+    </template>
+<template name="test">
+    {{textus}}
+</template>
+<template name="home">
+
+</template>
+<template name="jobseekers">
+    {{#if currentUser}}
+        <p>{{greetings}} </p>
+        <!-- {{currentUser}} -->
+        {{> dashboard}}
+    {{else}}
+        <!-- <p>You must be logged-in to see this content.</p> -->
+        <!-- {{> register}} -->
+
+        <!-- {{> login}}
+        <div class="login__labels"><a href="">Забули пароль?</a></div>
+        <div class="login__labels" id="login__labels_new"><a href="">Реєстрація</a></div> -->
+
+        <div class="login__labels" id="login__labels_new"><a class="login__labels_link" href="">Вхід та реєстрація</a></div>
+        
+
+    {{/if}}
+    <div id="overlay"></div>
+</template>
+<template name="dashboard">
+    <p><a href="#" class="logout">Вийти</a></p>
+</template>
+
+<template name="loginMenu">
+    <div class="info__menu info__menu_tab info__menu_tab_active"><a id="loginMenuSignIn" href="" >Вхід</a></div>
+    <div class="info__menu info__menu_tab"><a id="loginMenuRegister" href="" class="">Реєстрація</a></div>
+</template>
+
+<template name="register">
+  
+    <form class="register">
+        <div class="inputItem">
+            <div>Ім'я</div>
+            <input type="text" name="firstName">
+        </div>
+        <div class="inputItem">
+            <div>Прізвище</div>
+            <input type="text" name="lastName">
+        </div>
+        <div class="inputItem">
+            <div>Пошта</div>
+            <input type="text" name="registerEmail">
+        </div>
+        <div class="inputItem">
+            <div>Пароль</div>
+            <input type="password" name="registerPassword">
+        </div>
+        <div>
+            <input class="btn" type="submit" value="Join now">
+        </div>
+    </form>
+</template>
+
+<template name="login">
+
+    
+
+    <form class="register">
+        <div  class="inputItem">
+            <input type="email" placeholder="e-mail" name="loginEmail">
+        </div>
+        <div  class="inputItem">
+            <input type="password" placeholder="password" name="loginPassword">
+        </div>
+        <div  class="inputItem">
+            <input type="submit" value="Sign In"  class="btn btn_main">
+        </div>
+    </form>
+</template>
+
+<template name="about">
+    <div class="layout__block layout__block_center about">
+
+        <h1>Ми робимо правильну і потрібну справу</h1>
+        <div class="layout__block layout__block_text">
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque lacus non purus dictum condimentum. Aliquam porttitor, ligula a accumsan cursus, lectus lacus laoreet eros, at porttitor justo nisl at ex. Nullam tincidunt quam at urna scelerisque condimentum. Quisque vel nunc imperdiet, fermentum est nec, commodo ante. Proin vel lorem sit amet ante cursus sodales in id lorem. Curabitur et tincidunt orci, tincidunt lobortis justo. Praesent auctor ornare mollis. Nunc magna ligula, elementum id sagittis nec, vestibulum sit amet magna. In ultricies sapien vel dolor hendrerit pulvinar. Cras blandit hendrerit magna, ut sollicitudin urna facilisis sed. Pellentesque auctor tristique sodales.
+
+            Suspendisse dignissim lectus ac nibh finibus cursus. Cras in lacus fermentum, rhoncus est sit amet, consectetur purus. Aliquam sed libero sed leo faucibus hendrerit ac et ante. Pellentesque eget aliquet justo. Aliquam est risus, eleifend nec pharetra ut, cursus in lorem. Cras vitae efficitur nulla. Nunc ut egestas justo. Nunc sit amet orci blandit, rhoncus purus vel, auctor mauris. Mauris a vestibulum massa. Integer non dui lorem. Maecenas ac metus tincidunt, faucibus mi eu, eleifend ipsum. In dictum orci rhoncus fringilla ultrices. 
+        </div>
+
+        <h1>Наша команда старається для вас</h1>
+        <ul class="horizontal">
+            <li>
+                <img class="medium_img" src="/images/1.jpg" alt="BazaIT">
+                <div class="horizontal__description">
+                    Donec vulputate finibus ipsum nec semper. Maecenas consequat, velit eget mattis porta, velit mauris feugiat nisi, eu pellentesque ipsum elit a enim. Praesent sit amet justo faucibus, porta velit quis, sagittis nisi. 
+                </div>
+            </li>
+            <li>
+                <img class="medium_img" src="/images/2.jpg" alt="BazaIT">
+                <div class="horizontal__description">
+                    Donec a massa et tellus dictum fermentum. In sem sapien, viverra sed ex at, imperdiet posuere odio. Nunc vitae finibus arcu. Curabitur dictum elit eu orci fermentum ornare. Pellentesque molestie leo sit amet lorem tempor, quis sagittis odio pulvinar. 
+                </div>
+            </li>
+            <li>
+                <img class="medium_img" src="/images/3.jpg" alt="BazaIT">
+                <div class="horizontal__description">
+                    Suspendisse molestie consequat ornare. Sed bibendum cursus facilisis. Mauris sit amet dolor ultrices, rutrum elit ut, maximus sem. Nunc at tellus nec augue tincidunt gravida. Curabitur maximus gravida purus in sollicitudin. Proin feugiat iaculis risus. 
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+
+</template>
+
+<template name="services">
+     <div class="layout__block layout__block_center services">
+
+        
+        
+        
+        <div class="layout__block layout__block_text">
+            <h1>Наші послуги</h1>
+            <div class="advertising">
+                <h2>Реклама</h2>
+                <div class="tooltip">
+                    <img class="small_img " src="/images/icons/info.png" alt="info">
+                    
+                     
+                    <span class="tooltiptext">Tooltip text</span>             
+                </div>
+                <div class="textblock">      
+                    <img class=" " src="/images/no-img.jpg" alt="">
+                    <div><span class="underline">Формат шапки</span><br>
+                    хх $ на місяць.</div>
+
+                    <img class=" " src="/images/no-img.jpg" alt="">
+                    <div><span class="underline">Формат блоку праворуч</span><br>
+                    хх $ на місяць.</div>
+                </div>
+            </div>
+            <h2>Виставлення вакансій</h2>
+            <div class="textcolumn">
+                <h3>На три місяці: </h3>
+                20 вакансій - xxx дол<br>
+                50 вакансій - x xxx дол<br>
+                100 вакансій - x xxx дол<br>
+                200 вакансій - x xxx дол<br>
+            </div>
+
+            <div class="textcolumn">
+                <h3>На пів року:</h3>
+                20 вакансій - xx дол<br>
+                50 вакансій - x xxx дол<br>
+                100 вакансій - x xxx дол <br>
+                200 вакансій - x xxx дол<br>
+                500 вакансій - x xxx дол<br>
+            </div>
+            <div class="textcolumn">
+                <h3>На рік:</h3>
+                20 вакансій - x xxx дол<br>
+                50 вакансій - x xxx дол<br>
+                100 вакансій - x xxx дол <br>
+                200 вакансій - xx xxx дол<br>
+                500 вакансій - xx xxx дол<br>
+            </div>
+            <div class="clearblock">
+                <h3>Гаряча позиція</h3>
+                xx дол за одну позицію, яка буде відображатись на сайті тиждень.<br>
+
+                <h2>Статистика та аналітика</h2> - йде в пакетне розміщення компанії<br>
+
+                <h2>Стаття на головній сторінці про компанію</h2>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="footerMenu">
+
+    <div class="footer__block">
+  
+        <div class="footer__info">
+            <div class="layout__col">
+                <div class="info__title">
+                    <h2><a href="" class="">Контакти</a></h2>
+                    
+                </div>
+                <div class="info__content">
+                    <a href="tel:+380000000000" >+38 000 0000000</a>
+                    |
+                    <a href="mailto:someone@yoursite.com?subject=Mail from Our Site" >email@email.com</a>
+                </div>
+                <div class="socialNetworks">
+                    {{> footerSocialNetworks}}
+                </div>
+            </div>
+            <div class="layout__col layout__col_second">
+                <div class="info__title">
+                    <h2><a href="{{pathFor route='about'}}" class="">Про нас</a></h2>
+                    <h2><a href="{{pathFor route='services'}}" class="">Наші послуги</a></h2>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+
+    
+    </div>
+</template>
+
+<template name="footerSocialNetworks">
+    <a href="{{pathFor route='about'}}" class="">
+       <div class="fb"></div> 
+    </a>
+
+    <a href="{{pathFor route='about'}}" class="">
+       <div class="telegram"></div> 
+    </a>
+
+    <a href="{{pathFor route='about'}}" class="">
+       <div class="youtube"></div> 
+    </a>
+   <!--  <img class=" " src="/images/fb.png" alt="">
+    <img class=" " src="/images/telegram.png" alt="">
+    <img class=" " src="/images/youtube.png" alt="">
+ -->
+
+    
+    
+</template>
+<template name="allvacanciessearch">
+    
+        
+        <form>
+            <div class="inputItem">
+                <select>
+                    <!-- <option value="" disabled selected style='display:none;'>МІСТО</option> -->
+                    <option value="" hidden>МІСТО</option>
+                    <option>Львів</option>
+                    <option>Київ</option>
+                    <option>Одеса</option>
+                    <option>Харків</option>
+                </select>
+                <!-- <input type="email" placeholder="МІСТО" name="loginEmail"> -->
+                <a href=""><img src="/images/icons/pin.png" alt=""></a>
+            </div>
+            <div  class="inputItem">
+                <select>
+                    <option value="" hidden>ТЕХНОЛОГІЯ</option>
+                    <option>Львів</option>
+                    <option>Київ</option>
+                    <option>Одеса</option>
+                    <option>Харків</option>
+                </select>
+            </div>
+            <div  class="inputItem">
+                <input type="password" placeholder="посада, компанія,..." name="loginPassword">
+            </div>
+            <div  class="inputItem">
+                <input type="submit" value="Знайти"  class="btn btn_main">
+            </div>
+        </form>
+    
+</template>

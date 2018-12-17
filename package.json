@@ -1,0 +1,23 @@
+{
+  "name": "bazait",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "deploy": "meteor build . && pscp bazait.tar.gz root@157.230.16.49:site/bazait/pack"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "log4js": "^3.0.6",
+    "meteor-node-stubs": "^0.4.1"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}
