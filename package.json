@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
+    "babel-runtime": "^6.26.0",
     "log4js": "^3.0.6",
-    "meteor-node-stubs": "^0.4.1"
+    "meteor-node-stubs": "^0.4.1",
+    "mongoose": "^5.4.4"
   },
   "meteor": {
     "mainModule": {
@@ -19,5 +21,23 @@
       "server": "server/main.js"
     },
     "testModule": "tests/main.js"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anna-Kravchenko/bazaIT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anna-Kravchenko/bazaIT/issues"
+  },
+  "homepage": "https://github.com/Anna-Kravchenko/bazaIT#readme",
+  "description": ""
 }

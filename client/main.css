@@ -28,14 +28,21 @@ body{
     margin-top: 15px;
 }
 .header__logo, 
-.header__info{
+.main{
     padding: 15px;
 }
+
+.header__info{
+    /*margin: 15px;*/
+}
+
 main{
     padding: 15px;
 }
-.container__menu{
-    height: 64px;
+.header__info{
+    /*height: 64px;*/
+    height: 52px;
+    padding: 15px;
     background: url("/images/header.jpg") repeat-x;
 }
 .container__block_bg_white{
@@ -54,7 +61,7 @@ float: none;
 margin-left: 320px;
 }
 .login{
-    float: right;
+    /*float: right;*/
 }
 .login_inputs{
     float: left;
@@ -78,9 +85,10 @@ margin-left: 320px;
     background-color: #FBE6A3;
     border-radius: 2px;
     /*font-size: 1em;*/
-    padding: 3px 8px;
+    padding: 2px 8px;
     font-weight: 400;
     font-family: 'Ubuntu', sans-serif;
+    height: 1.6rem;
 }
 .btn_main{
 
@@ -116,6 +124,15 @@ margin-left: 320px;
     display: none;
     overflow: hidden;
 }
+.info__menu {
+    float: right;
+}
+.header__info .info__title{
+
+    line-height: 52px;
+    float: right;
+    vertical-align: middle;
+}
 .info__title{
     font-weight: 300;
     font-family: 'Ubuntu', sans-serif;
@@ -138,6 +155,10 @@ margin-left: 320px;
     color: #EEA079;
 
 }
+input{
+
+    height: 1.3rem;
+}
 
 .inputItem{
     margin: 5px 0 15px 0;
@@ -148,7 +169,39 @@ margin-left: 320px;
     margin: 6px 0;
     font-size: 0.8rem;
 }
+.inputfile, btn  {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 
+}
+.inputfile + label, btn {
+    display: inline-block;
+    padding: 5px;
+    color: #303c6c;
+    width:200px;
+    font-size: 0.9rem;
+    border: 1px solid #E6E6E6;
+    height: 1rem;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    /*background-color: #808080;*/
+}
+.inputfile + label, .btn {
+    cursor: pointer;
+}
+.inputfile + label{
+    background:  url("/images/icons/browse.png") no-repeat right top white;
+}
+.container__menu{
+    float: left;
+}
 .register{
     color: #405357;
     /*font-size: 15px;*/
@@ -361,9 +414,10 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url("/images/icons/arrows.png") 96% / 5% no-repeat #eee;
+    background: url("/images/icons/arrows.png") 96% / 5% no-repeat #fff;
+    cursor: pointer;
 }
-
+.
 
 /* CAUTION: IE hackery ahead */
 select::-ms-expand { 
@@ -376,4 +430,36 @@ select::-ms-expand {
         background:none\9;
         padding: 5px\9;
     } 
+}
+.tableList th{
+    font-weight: 500;
+    background-color: #808080;
+    color: white;
+}
+.btn16{
+    width: 16px;
+    height: 16px;
+}
+.btn_edit{
+    display: inline-block;
+    
+    background-image:  url("/images/icons/edit.png");
+}
+.btn_save{
+   
+    background-image:  url("/images/icons/save16.png");
+}
+.btn_cancel{
+    background-image:  url("/images/icons/cancel.png");
+}
+
+.hidden{
+    display: none;
+}
+.unhidden{
+    display: inline-block;
+}
+.tableList input,
+.tableList select{
+    display: none;
 }

@@ -33,23 +33,21 @@
                                                 {{> register}}
                                             </div>
                                         </div>
-                                        
-                                       
                                     </div>
                                 </div>
                                 <div class="info__menu">
-                                    
+                                    <a id="ourAdminPage" href="{{pathFor route='ourAdminPage'}}" class="">Наша адмінка</a>
+                                </div>
+                                <div class="container__menu">
+                                    <div class="searchbar">
+                                        {{> allvacanciessearch}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                 </header>
-            </div>
-            <div class="container__menu">
-                <div class="searchbar">
-                    {{> allvacanciessearch}}
-                </div>
             </div>
             <div class="container__layout container__block container__block_bg_white">
                 <main class="layout">
@@ -63,12 +61,6 @@
                     </div>
 
                 </main>
-               
-                <!-- <p>{{> loginButtons}}</p> -->
-
-
-
-               
             
             </div>
             <div class="container__footer">
@@ -92,19 +84,144 @@
 <template name="home">
 
 </template>
+<template name="ourAdminPage">
+    <table>
+        <tr>
+            <td colspan="2"><h1>Міста</h1></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="city" placeholder="назва"></td>
+            <td><input type="submit" value="Додати" id="cityBtn" class="btn btn_main"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td colspan="2"><h1>Технології</h1></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="tech" placeholder="назва"></td>
+            <td><input type="submit" value="Додати" id="techBtn" class="btn btn_main"></td>
+        </tr>
+    </table>
+    <h1>Компанії</h1>
+    {{>companiesList}}
+    <table>
+        <!-- <tr>
+            <td colspan="6"><h1>Компанії</h1></td>
+        </tr> -->
+        <tr>
+            <td><input type="text" name="lastName" id="companyName" placeholder="назва"></td>
+            <td><input type="text" name="lastName" id="companySite" placeholder="вебсайт"></td>
+            <td><input type="text" name="lastName" id="companyEmount" placeholder="к-сть працівників"></td>
+            
+
+            <td>
+                {{>citiesList}}
+            </td>
+            <td>
+                {{> fileUpload}}
+                
+            </td>
+            <td><input type="submit" value="Додати" id="companiesBtn" class="btn btn_main"></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td colspan="7"><h1>Вакансії</h1></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="lastName" placeholder="назва"></td>
+            <td><input type="text" name="lastName" placeholder="опис"></td>
+            <td><input type="text" name="lastName" placeholder="компанія"></td>
+            <td><input type="text" name="lastName" placeholder="міста"></td>
+            <td>
+                <input type="file" name="lastName" placeholder="технологія">
+            </td>
+            <td><input type="submit" value="Додати"  class="btn btn_main"></td>
+        </tr>
+    </table>
+  
+   
+
+</template>
+
+<template name="fileUpload">
+    <form>
+        <input type="file" name="imageFile" id="file" class="inputfile">
+    
+        <label for="file">Оберіть іконку</label>
+                    
+    </form>
+</template>
+<template name="companiesList">
+    <table class="tableList">
+        <tbody>
+             <tr> 
+                
+                    <th>
+                        Назва
+                    </th>
+                    <th>
+                        Веб-сайт
+                    </th>
+                    <th>
+                        Кількість
+                    </th>
+                    <th>
+                        Місто
+                    </th>
+                    <th>
+                        Іконка
+                    </th>
+                    <td>
+                    </td>
+                </tr>
+            {{#each company}}
+               {{> companyItem}}
+            {{/each}}
+        </tbody>
+    </table>
+</template>
+<template name="companyItem">
+    <!-- {{#if _id}} -->
+    <tr id="{{_id}}">
+             <td>
+                <span>{{name}}</span>
+                <input type="text" name="{{name}}" value="{{name}}">
+            </td>
+            <td>
+                <span>{{site}}</span>
+                <input type="text" name="{{site}}" value="{{site}}">
+            </td>
+            <td>
+                <span>{{emount}}</span>
+                <input type="text" name="{{emount}}" value="{{emount}}">
+            </td>
+            <td>
+                <span>{{city}}</span>
+                {{>citiesList}}
+            </td>
+            <td>
+                <span>{{{icon}}}</span>
+               <input type="text" name="{{compIcon}}">
+            </td>
+            <td>
+                <a href="#" class="btn16 btn_edit unhidden"></a>
+                <a href="#" class="btn16 btn_delete"></a>
+                <a href="#" class="btn16 btn_save hidden"></a>
+                <a href="#" class="btn16 btn_cancel hidden"></a>
+            </td>
+                
+                   
+    </tr>
+</template>
+
 <template name="jobseekers">
     {{#if currentUser}}
         <p>{{greetings}} </p>
-        <!-- {{currentUser}} -->
         {{> dashboard}}
     {{else}}
-        <!-- <p>You must be logged-in to see this content.</p> -->
-        <!-- {{> register}} -->
-
-        <!-- {{> login}}
-        <div class="login__labels"><a href="">Забули пароль?</a></div>
-        <div class="login__labels" id="login__labels_new"><a href="">Реєстрація</a></div> -->
-
         <div class="login__labels" id="login__labels_new"><a class="login__labels_link" href="">Вхід та реєстрація</a></div>
         
 
@@ -310,38 +427,40 @@
 
     <a href="{{pathFor route='about'}}" class="">
        <div class="youtube"></div> 
-    </a>
-   <!--  <img class=" " src="/images/fb.png" alt="">
-    <img class=" " src="/images/telegram.png" alt="">
-    <img class=" " src="/images/youtube.png" alt="">
- -->
+    </a>    
+</template>
+<template name="citiesList">
+    <select id="companyCities">       
+        <option value="" hidden>МІСТО</option>
+        {{#each city}}
+        <option value={{cityName}}>{{cityName}}</option>
 
-    
-    
+        {{/each}}
+    </select>
 </template>
 <template name="allvacanciessearch">
-    
-        
-        <form>
+        <form class="vacanciesFilter">
             <div class="inputItem">
-                <select>
-                    <!-- <option value="" disabled selected style='display:none;'>МІСТО</option> -->
+                {{> citiesList}}
+                <!-- <select>
+
                     <option value="" hidden>МІСТО</option>
                     <option>Львів</option>
                     <option>Київ</option>
                     <option>Одеса</option>
                     <option>Харків</option>
-                </select>
+                </select> -->
                 <!-- <input type="email" placeholder="МІСТО" name="loginEmail"> -->
                 <a href=""><img src="/images/icons/pin.png" alt=""></a>
             </div>
             <div  class="inputItem">
                 <select>
                     <option value="" hidden>ТЕХНОЛОГІЯ</option>
-                    <option>Львів</option>
-                    <option>Київ</option>
-                    <option>Одеса</option>
-                    <option>Харків</option>
+                    <option>.NET</option>
+                    <option>C++</option>
+                    <option>PHP</option>
+                    <option>Java</option>
+                    <option>Technical writer</option>
                 </select>
             </div>
             <div  class="inputItem">
